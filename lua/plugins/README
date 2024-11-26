@@ -1,0 +1,33 @@
+## 插件 setup() 方法的参数在 Lazy.nvim 中应该如何配置?
+
+> Lazy.nvim 自动将 opts 传递给插件的 setup 方法，适合大部分插件的配置.
+
+比如 mason.nvim 中需要如下方式配置 ui: 
+
+```lua
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+})
+```
+在 lazy.nvim 的插件体系下可以这样写: 
+
+```lua
+return {
+  "williamboman/mason.nvim",
+  opts = {
+    ui = {
+      icons = {
+        package_installed = "✓",
+        package_pending = "➜",
+        package_uninstalled = "✗",
+      },
+    },
+  },
+}
+```
