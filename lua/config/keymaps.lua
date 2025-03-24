@@ -17,7 +17,11 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 keymap.set("n", "<leader>n", ":set number!<CR>", { noremap = true, silent = true })             -- 关闭搜索高亮
 keymap.set("n", "<leader>p", ":set paste!<CR>", { noremap = true, silent = true })              -- 关闭搜索高亮
 keymap.set("n", "<leader>g", ":NvimTreeToggle<CR>", { noremap = true, silent = true })	        -- 打开/关闭 nvim-tree
-keymap.set("n", "<leader>q", ":wqa<CR>", { noremap = true, silent = true })	        -- 打开/关闭 nvim-tree
+keymap.set("n", "<leader>q", ":q<CR>", { noremap = true, silent = true })	        -- 打开/关闭 nvim-tree
+keymap.set("n", "<leader>qa", ":qa<CR>", { noremap = true, silent = true })	        -- 打开/关闭 nvim-tree
+keymap.set("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })	        -- 打开/关闭 nvim-tree
+keymap.set("n", "<leader>wq", ":wq<CR>", { noremap = true, silent = true })	        -- 打开/关闭 nvim-tree
+keymap.set("n", "<leader>wqa", ":wqa<CR>", { noremap = true, silent = true })	        -- 打开/关闭 nvim-tree
 keymap.set("n", "<leader>hl", ":set hlsearch!<CR>", { noremap = true, silent = true })	        -- 打开/关闭 nvim-tree
 keymap.set("n", "<leader>sv", ":vs<CR>", { noremap = true, silent = true })                     -- 水平分屏
 keymap.set("n", "<leader>sh", ":sp<CR>", { noremap = true, silent = true })                     -- 垂直分屏
