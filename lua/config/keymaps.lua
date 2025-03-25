@@ -21,7 +21,7 @@ keymap.set("n", "<leader>qa", ":qa<CR>", { noremap = true, silent = true, desc =
 keymap.set("n", "<leader>ww", ":w<CR>", { noremap = true, silent = true, desc = 'Write' })
 keymap.set("n", "<leader>wa", ":wa<CR>", { noremap = true, silent = true, desc = 'Write All' })
 keymap.set("n", "<leader>hl", ":set hlsearch!<CR>", { noremap = true, silent = true, desc = 'Toggle Highlight Search' })
-keymap.set("n", "<leader>vs", ":vs<CR>", { noremap = true, silent = true, desc = 'Virtical Split' })
+keymap.set("n", "<leader>sv", ":vs<CR>", { noremap = true, silent = true, desc = 'Virtical Split' })
 keymap.set("n", "<leader>sp", ":sp<CR>", { noremap = true, silent = true, desc = 'Horizontal Split' })
 keymap.set("n", "<leader>t", ":sp | terminal<CR>", { noremap = true, silent = true, desc = 'Open Termial Vertical' })
 keymap.set("n", "<leader>vt", ":vsp | terminal<CR>", { noremap = true, silent = true, desc = 'Open Termianl Horizontal' })
