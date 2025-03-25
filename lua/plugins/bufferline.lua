@@ -22,6 +22,7 @@ return {
       },
       show_close_icon = true,
       show_buffer_close_icons = true,
+      always_show_bufferline = true,
     },
   },
 }
