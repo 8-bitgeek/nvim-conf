@@ -14,23 +14,18 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 
 -- ----------------- 普通模式下的配置 -----------------
-keymap.set("n", "<leader>n", ":set number!<CR>", { noremap = true, silent = true })             -- 关闭搜索高亮
-keymap.set("n", "<leader>p", ":set paste!<CR>", { noremap = true, silent = true })              -- 关闭搜索高亮
-keymap.set("n", "<leader>g", ":NvimTreeToggle<CR>", { noremap = true, silent = true })	        -- 打开/关闭 nvim-tree
-keymap.set("n", "<leader>q", ":q<CR>", { noremap = true, silent = true })	        -- 打开/关闭 nvim-tree
-keymap.set("n", "<leader>qa", ":qa<CR>", { noremap = true, silent = true })	        -- 打开/关闭 nvim-tree
-keymap.set("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })	        -- 打开/关闭 nvim-tree
-keymap.set("n", "<leader>wq", ":wq<CR>", { noremap = true, silent = true })	        -- 打开/关闭 nvim-tree
-keymap.set("n", "<leader>wqa", ":wqa<CR>", { noremap = true, silent = true })	        -- 打开/关闭 nvim-tree
-keymap.set("n", "<leader>hl", ":set hlsearch!<CR>", { noremap = true, silent = true })	        -- 打开/关闭 nvim-tree
-keymap.set("n", "<leader>vs", ":vs<CR>", { noremap = true, silent = true })                     -- 水平分屏
-keymap.set("n", "<leader>sp", ":sp<CR>", { noremap = true, silent = true })                     -- 垂直分屏
-keymap.set("n", "<leader>sc", "<C-w>c", { noremap = true, silent = true })                      -- 关闭当前窗口
-keymap.set("n", "<leader>so", "<C-w>o", { noremap = true, silent = true })                      -- 关闭其它窗口
-keymap.set("n", "<leader>t", ":sp | terminal<CR>", { noremap = true, silent = true })           -- 下方打开 terminal
-keymap.set("n", "<leader>vt", ":vsp | terminal<CR>", { noremap = true, silent = true })         -- 右侧打开 terminal
-keymap.set("n", "<leader>bc", ":tabclose<CR>", { noremap = true, silent = true })               -- 关闭当前 buffer
-keymap.set("n", "<leader>w", ":set wrap!<CR>", { noremap = true, silent = true })               -- 自动换行
+keymap.set("n", "<leader>n", ":set number!<CR>", { noremap = true, silent = true, desc = 'Toggle Number Display' })
+keymap.set("n", "<leader>p", ":set paste!<CR>", { noremap = true, silent = true, desc = 'Paste' })
+keymap.set("n", "<leader>qq", ":q<CR>", { noremap = true, silent = true, desc = 'Quit' })
+keymap.set("n", "<leader>qa", ":qa<CR>", { noremap = true, silent = true, desc = 'Quit All' })
+keymap.set("n", "<leader>ww", ":w<CR>", { noremap = true, silent = true, desc = 'Write' })
+keymap.set("n", "<leader>wa", ":wa<CR>", { noremap = true, silent = true, desc = 'Write All' })
+keymap.set("n", "<leader>hl", ":set hlsearch!<CR>", { noremap = true, silent = true, desc = 'Toggle Highlight Search' })
+keymap.set("n", "<leader>vs", ":vs<CR>", { noremap = true, silent = true, desc = 'Virtical Split' })
+keymap.set("n", "<leader>sp", ":sp<CR>", { noremap = true, silent = true, desc = 'Horizontal Split' })
+keymap.set("n", "<leader>t", ":sp | terminal<CR>", { noremap = true, silent = true, desc = 'Open Termial Vertical' })
+keymap.set("n", "<leader>vt", ":vsp | terminal<CR>", { noremap = true, silent = true, desc = 'Open Termianl Horizontal' })
+keymap.set("n", "<leader>wr", ":set wrap!<CR>", { noremap = true, silent = true, desc = 'Toggle Wrap' })
 
 -- 窗口跳转 --
 keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
@@ -38,6 +33,3 @@ keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
 keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
 keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 
--- tab 跳转
-keymap.set("n", "<leader>h", ":BufferLineCyclePrev<CR>")        -- 切换到上一个标签页
-keymap.set("n", "<leader>l", ":BufferLineCycleNext<CR>")        -- 切换到下一个标签页

@@ -5,7 +5,7 @@ return {
   keys = {
       { "L", "<cmd>BufferLineCycleNext<cr>", desc = "Cycle Next Tab" },
       { "H", "<cmd>BufferLineCyclePrev<cr>", desc = "Cycle Previous Tab" },
-      { "<leader>q", "<cmd>bd<cr>", desc = "Close Current Tab" },
+      { "<leader>qq", "<cmd>bd<cr>", desc = "Close Current Tab" },
   },
   opts = {
     options = {
