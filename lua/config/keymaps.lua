@@ -23,8 +23,8 @@ keymap.set("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })	      
 keymap.set("n", "<leader>wq", ":wq<CR>", { noremap = true, silent = true })	        -- 打开/关闭 nvim-tree
 keymap.set("n", "<leader>wqa", ":wqa<CR>", { noremap = true, silent = true })	        -- 打开/关闭 nvim-tree
 keymap.set("n", "<leader>hl", ":set hlsearch!<CR>", { noremap = true, silent = true })	        -- 打开/关闭 nvim-tree
-keymap.set("n", "<leader>sv", ":vs<CR>", { noremap = true, silent = true })                     -- 水平分屏
-keymap.set("n", "<leader>sh", ":sp<CR>", { noremap = true, silent = true })                     -- 垂直分屏
+keymap.set("n", "<leader>vs", ":vs<CR>", { noremap = true, silent = true })                     -- 水平分屏
+keymap.set("n", "<leader>sp", ":sp<CR>", { noremap = true, silent = true })                     -- 垂直分屏
 keymap.set("n", "<leader>sc", "<C-w>c", { noremap = true, silent = true })                      -- 关闭当前窗口
 keymap.set("n", "<leader>so", "<C-w>o", { noremap = true, silent = true })                      -- 关闭其它窗口
 keymap.set("n", "<leader>t", ":sp | terminal<CR>", { noremap = true, silent = true })           -- 下方打开 terminal
