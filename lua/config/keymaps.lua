@@ -27,6 +27,8 @@ keymap.set("n", "<leader>sp", ":sp<CR>", { noremap = true, silent = true, desc =
 keymap.set("n", "<leader>t", ":sp | terminal<CR>", { noremap = true, silent = true, desc = 'Open Termial Vertical' })
 keymap.set("n", "<leader>vt", ":vsp | terminal<CR>", { noremap = true, silent = true, desc = 'Open Termianl Horizontal' })
 keymap.set("n", "<leader>wr", ":set wrap!<CR>", { noremap = true, silent = true, desc = 'Toggle Wrap' })
+keymap.set("n", "<leader>U", "gUaw", { noremap = true, silent = true, desc = 'To Upper Case' })
+keymap.set("n", "<leader>u", "guaw", { noremap = true, silent = true, desc = 'To Lower Case' })
 
 -- 窗口跳转 --
 keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
