@@ -48,8 +48,8 @@ return {
             }
         }
 
-        -- Python LSP 配置（你也可以改成 basedpyright）
-        lspconfig.basedpyright.setup {
+        -- Python LSP 配置
+        lspconfig.pyright.setup {
             capabilities = capabilities,
             on_attach = on_attach,
             filetypes = { "python", "py" },
