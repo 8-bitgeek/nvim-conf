@@ -1,21 +1,66 @@
+-- 用于配置 nvim 的 LSP 客户端, 进行语言服务器的注册和参数定制
 return {
-  "neovim/nvim-lspconfig",
-  dependencies = { "williamboman/mason-lspconfig.nvim" },  -- mason-lspconfig 必须先加载
-  config = function()
-    local lspconfig = require("lspconfig")
+    "neovim/nvim-lspconfig",
+    event = {"BufReadPre", "BufNewFile"},           -- 只在打开文件时加载
+    dependencies = {
+        "williamboman/mason-lspconfig.nvim",
+        "hrsh7th/cmp-nvim-lsp",
+    },
 
-    lspconfig.lua_ls.setup {
-        on_attach = function(client, bufnr)
-            print("Lua LSP Attached!")
-        end
-    }
+    config = function()
+        local lspconfig = require("lspconfig")
+        local util = require("lspconfig.util")
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    lspconfig.pyright.setup {
-        filetypes = {'python', 'py'},                       -- 指定触发 LSP 的文件类型(覆盖默认值)
-        root_dir = require("lspconfig.util").root_pattern(".git", "pyproject.toml"),    -- 项目根目录检测
-        on_attach = function(client, bufnr)
-            print("Python LSP Attached!")
+        -- 所有语言服务器共享的快捷键等行为
+        local function on_attach(client, bufnr)
+            local map = vim.keymap.set
+            local opts = { buffer = bufnr, silent = true }
+
+            map("n", "gd", vim.lsp.buf.definition, opts)
+            map("n", "gD", vim.lsp.buf.declaration, opts)
+            map("n", "gi", vim.lsp.buf.implementation, opts)
+            map("n", "gr", vim.lsp.buf.references, opts)
+            map("n", "K", vim.lsp.buf.hover, opts)
+            map("n", "<leader>rn", vim.lsp.buf.rename, opts)
+            map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+            map("n", "<leader>f", function()
+                vim.lsp.buf.format { async = true }
+            end, opts)
+            map("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+
+            -- 禁用某些语言服务器的内建格式化
+            if client.name == "pyright" then
+                client.server_capabilities.documentFormattingProvider = false
+            end
+
+            print("LSP attached for " .. client.name)
         end
-    }
-  end
+
+        -- Lua LSP 配置
+        lspconfig.lua_ls.setup {
+            capabilities = capabilities,
+            on_attach = on_attach,
+            settings = {
+                Lua = {
+                    diagnostics = { globals = { "vim" } }, -- 忽略 vim 未定义报错
+                }
+            }
+        }
+
+        -- Python LSP 配置（你也可以改成 basedpyright）
+        lspconfig.basedpyright.setup {
+            capabilities = capabilities,
+            on_attach = on_attach,
+            filetypes = { "python", "py" },
+            root_dir = util.root_pattern(".git", "pyproject.toml", "setup.py", "requirements.txt"),
+        }
+
+        -- 更多语言你可以继续这样加：
+        -- lspconfig.clangd.setup {
+        --     capabilities = capabilities,
+        --     on_attach = on_attach,
+        -- }
+    end,
 }
+
