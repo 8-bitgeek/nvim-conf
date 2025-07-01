@@ -24,10 +24,8 @@ return {
             map("n", "K", vim.lsp.buf.hover, opts)
             map("n", "<leader>rn", vim.lsp.buf.rename, opts)
             map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-            map("n", "<leader>f", function()
-                vim.lsp.buf.format { async = true }
-            end, opts)
-            map("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+            map("n", "<leader>f", function() vim.lsp.buf.format { async = true } end, opts)
+            map("n", "<C-p>", vim.lsp.buf.signature_help, opts)
 
             -- 禁用某些语言服务器的内建格式化
             if client.name == "pyright" then
@@ -56,11 +54,13 @@ return {
             root_dir = util.root_pattern(".git", "pyproject.toml", "setup.py", "requirements.txt"),
         }
 
-        -- 更多语言你可以继续这样加：
-        -- lspconfig.clangd.setup {
-        --     capabilities = capabilities,
-        --     on_attach = on_attach,
-        -- }
+        lspconfig.clangd.setup {
+            capabilities = capabilities,
+            on_attach = on_attach,
+            cmd = {"clangd", "--background-index"},         -- 可选优化参数
+            filetypes = {"c", "cpp", "objc", "objcpp"},
+            root_dir = util.root_pattern("compile_commands.json", ".git"),      -- 判断当前工程的根目录
+        }
     end,
 }
 
