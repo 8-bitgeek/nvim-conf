@@ -14,6 +14,9 @@ return {
             ["<S-Tab>"] = cmp.mapping.select_prev_item(),
             ["<CR>"] = cmp.mapping.confirm({ select = true }),
             ["<C-Space>"] = cmp.mapping.complete(),
+            ['<C-p>'] = cmp.mapping(function()
+                vim.lsp.buf.signature_help()
+            end, {'i'}),
         }),
         sources = cmp.config.sources({
             { name = "nvim_lsp" },

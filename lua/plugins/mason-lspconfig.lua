@@ -16,7 +16,7 @@ return {
 
         -- 打开后, 如果 lspconfig 里配置了一个没有安装的语言服务器, 
         -- 会自动通过 mason 安装它
-        automatic_installation = true,
+        automatic_enable= false,
     }
 }
 
