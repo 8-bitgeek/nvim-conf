@@ -25,6 +25,7 @@ return {
             map("n", "<leader>rn", vim.lsp.buf.rename, opts)
             map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
             map("n", "<leader>f", function() vim.lsp.buf.format { async = true } end, opts)
+            map('n', '<C-p>', vim.lsp.buf.signature_help, { noremap = true, silent = true })
 
             -- 禁用某些语言服务器的内建格式化
             if client.name == "pyright" then
