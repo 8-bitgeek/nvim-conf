@@ -3,6 +3,14 @@
 
 # Prerequisite
 
+## Debian
+
 ```shell
 sudo apt install ripgrep fd-find
+```
+
+## Mac
+
+```shell
+brew isntall ripgrep ffind
 ```
