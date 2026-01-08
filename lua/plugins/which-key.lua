@@ -1,14 +1,8 @@
 return { 
-  "folke/which-key.nvim",
-  event = "VeryLazy",
-  opts = {},
-  keys = {
-    {
-      "<leader>?",
-      function()
-        require("which-key").show({ global = false })
-      end,
-      desc = "Buffer Local Keymaps (which-key)",
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {
+        -- 控制插件响应时间
+        delay = 500,
     },
-  },
 }
