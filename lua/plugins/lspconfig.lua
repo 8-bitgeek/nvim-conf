@@ -8,7 +8,6 @@ return {
     },
 
     config = function()
-        local lspconfig = require("lspconfig")
         local util = require("lspconfig.util")
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -36,7 +35,7 @@ return {
         end
 
         -- Lua LSP 配置
-        lspconfig.lua_ls.setup {
+        vim.lsp.config("lua_ls", {
             capabilities = capabilities,
             on_attach = on_attach,
             settings = {
@@ -44,23 +43,23 @@ return {
                     diagnostics = { globals = { "vim" } }, -- 忽略 vim 未定义报错
                 }
             }
-        }
+        })
 
         -- Python LSP 配置
-        lspconfig.pyright.setup {
+        vim.lsp.config("pyright", {
             capabilities = capabilities,
             on_attach = on_attach,
             filetypes = { "python", "py" },
             root_dir = util.root_pattern(".git", "pyproject.toml", "setup.py", "requirements.txt"),
-        }
+        })
 
-        lspconfig.clangd.setup {
+        vim.lsp.config("clangd", {
             capabilities = capabilities,
             on_attach = on_attach,
             cmd = {"clangd", "--background-index"},         -- 可选优化参数
             filetypes = {"c", "cpp", "objc", "objcpp"},
             root_dir = util.root_pattern("compile_commands.json", ".git"),      -- 判断当前工程的根目录
-        }
+        })
     end,
 }
 
