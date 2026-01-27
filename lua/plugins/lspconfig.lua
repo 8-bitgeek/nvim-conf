@@ -1,7 +1,7 @@
 -- 用于配置 nvim 的 LSP 客户端, 进行语言服务器的注册和参数定制
 return {
     "neovim/nvim-lspconfig",
-    event = {"BufReadPre", "BufNewFile"},           -- 只在打开文件时加载
+    -- event = {"BufReadPre", "BufNewFile"},           -- 只在打开文件时加载
     dependencies = {
         "williamboman/mason-lspconfig.nvim",
         "hrsh7th/cmp-nvim-lsp",
@@ -15,7 +15,7 @@ return {
         local function on_attach(client, bufnr)
             local map = vim.keymap.set
             local opts = { buffer = bufnr, silent = true }
-
+            vim.diagnostic.config({ update_in_insert = true })
             map("n", "gd", vim.lsp.buf.definition, opts)
             map("n", "gD", vim.lsp.buf.declaration, opts)
             map("n", "gi", vim.lsp.buf.implementation, opts)
@@ -35,7 +35,9 @@ return {
         end
 
         -- Lua LSP 配置
-        vim.lsp.config("lua_ls", {
+        vim.lsp.config["lua_ls"] = {
+            cmd = { 'lua-language-server' },
+            filetypes = { 'lua' },
             capabilities = capabilities,
             on_attach = on_attach,
             settings = {
@@ -43,7 +45,7 @@ return {
                     diagnostics = { globals = { "vim" } }, -- 忽略 vim 未定义报错
                 }
             }
-        })
+        }
 
         -- Python LSP 配置
         vim.lsp.config("pyright", {
@@ -53,13 +55,15 @@ return {
             root_dir = util.root_pattern(".git", "pyproject.toml", "setup.py", "requirements.txt"),
         })
 
-        vim.lsp.config("clangd", {
+        vim.lsp.config["clangd"] = {
             capabilities = capabilities,
             on_attach = on_attach,
             cmd = {"clangd", "--background-index"},         -- 可选优化参数
             filetypes = {"c", "cpp", "objc", "objcpp"},
             root_dir = util.root_pattern("compile_commands.json", ".git"),      -- 判断当前工程的根目录
-        })
+        }
+
+        vim.lsp.enable({ "clangd", "lua_ls", "pyright" })
     end,
 }
 

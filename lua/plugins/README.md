@@ -1,6 +1,7 @@
 ## 插件 setup() 方法的参数在 Lazy.nvim 中应该如何配置?
 
-> Lazy.nvim 自动将 opts 传递给插件的 setup 方法，适合大部分插件的配置.
+> opts 本质上是 Lazy 传递给插件的一个配置表, 加载插件时 Lazy 会自动将 opts 传递给插件的 setup 方法，适合大部分插件的配置.
+> Lazy 内部大概是以以下方式传递给插件: if plugin.supports_setup then plugin.setup(opts) end
 
 比如 mason.nvim 中需要如下方式配置 ui: 
 
@@ -21,12 +22,12 @@ require("mason").setup({
 return {
     "williamboman/mason.nvim",
     opts = {
-        ui = {
-        icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗",
-        },
+            ui = {
+            icons = {
+                package_installed = "✓",
+                package_pending = "➜",
+                package_uninstalled = "✗",
+            },
         },
     },
 }
