@@ -6,7 +6,7 @@ return {
     opts = {
         actions = {
             open_file = {
-                quit_on_open = true,            -- 打开文件时, 自动关闭导航栏
+                quit_on_open = false,            -- 打开文件时, 自动关闭导航栏(否)
             }
         }
     },
