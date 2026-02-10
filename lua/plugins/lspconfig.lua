@@ -58,9 +58,9 @@ return {
         vim.lsp.config("clangd", {
             capabilities = capabilities,
             on_attach = on_attach,
-            cmd = {"clangd", "--background-index"},                             -- 可选优化参数
+            cmd = {"clangd", "--background-index", "--log=verbose"},                             -- 可选优化参数
             filetypes = {"c", "cpp", "objc", "objcpp"},
-            root_dir = util.root_pattern("compile_commands.json", ".git"),      -- 判断当前工程的根目录
+            -- root_dir = util.root_pattern("compile_commands.json", ".git")
         })
 
         vim.lsp.enable({ "clangd", "lua_ls", "pyright" })
