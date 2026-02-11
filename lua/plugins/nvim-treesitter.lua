@@ -4,7 +4,7 @@ return {
     event = "VeryLazy",
     opts = {
         ensure_installed = {
-            "c", "lua", "bash", "json", "yaml", "markdown",
+            "c", "make", "lua", "bash", "json", "yaml", "markdown", "python"
         },
         highlight = {
             enable = true,
