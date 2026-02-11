@@ -41,3 +41,6 @@ opt.backup = false
 opt.writebackup = false
 opt.swapfile = false
 
+-- 禁用 modeline
+opt.modeline = false
+opt.modelines = 0

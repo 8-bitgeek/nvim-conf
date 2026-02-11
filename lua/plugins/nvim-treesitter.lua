@@ -1,5 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    branch = "master",
     event = "VeryLazy",
     opts = {
         ensure_installed = {
@@ -11,5 +12,6 @@ return {
         indent = {
             enable = true,
         }
-    }
+    },
+    build = ":TSUpdate"                                     -- 安装后更新 parser
 }
