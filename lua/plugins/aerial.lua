@@ -11,14 +11,16 @@ return {
 
         -- 布局设置
         layout = {
-            default_direction = "right",   -- 默认在右侧
-            max_width = { 80, 0.2 },       -- 最大宽度，30列或屏幕宽度20%
-            min_width = 50,                -- 最小宽度
+            default_direction = "right",                    -- 默认在右侧
+            max_width = { 80, 0.2 },                        -- 最大宽度，30列或屏幕宽度20%
+            min_width = 50,                                 -- 最小宽度
         },
-
-        show_guides = true,              -- 显示折叠引导线
-        highlight_mode = "split_width",  -- 高亮模式
-        filter_kind = false,             -- 不过滤任何符号类型，可按需开启
+        autojump = true,                                    -- 跟随跳转
+        keymaps = {
+        },
+        show_guides = true,                                 -- 显示折叠引导线
+        highlight_mode = "split_width",                     -- 高亮模式
+        filter_kind = false,                                -- 不过滤任何符号类型，可按需开启
     },
     config = function(_, opts)
         require("aerial").setup(opts)
