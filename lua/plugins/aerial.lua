@@ -1,3 +1,4 @@
+-- 用于生成代码大纲的插件
 return {
     "stevearc/aerial.nvim",
     lazy = true,

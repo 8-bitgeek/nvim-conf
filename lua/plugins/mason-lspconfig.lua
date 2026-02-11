@@ -1,3 +1,4 @@
+-- 用于桥接 Mason 与 lspconfig
 return {
     -- mason-lspconfig 是 mason.nvim 和 nvim-lspconfig 之间的桥梁, 
     -- 负责自动绑定语言服务器

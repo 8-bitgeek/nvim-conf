@@ -1,3 +1,4 @@
+-- 主题
 return {
   "folke/tokyonight.nvim",
   lazy = false,

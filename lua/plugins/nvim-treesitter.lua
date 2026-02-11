@@ -1,3 +1,4 @@
+-- 用于管理语法解析器: parser, 使用方式: TSInstall python
 return {
     "nvim-treesitter/nvim-treesitter",
     branch = "master",
