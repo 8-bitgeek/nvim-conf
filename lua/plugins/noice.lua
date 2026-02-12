@@ -6,6 +6,11 @@ return {
         "rcarriga/nvim-notify",
     },
     opts = {
+        -- 把消息转发给 notify
+        notify = {
+            enabled = true,
+            view = "notify",
+        },
         -- cmdline 变成居中浮窗
         cmdline = {
             view = "cmdline_popup",
