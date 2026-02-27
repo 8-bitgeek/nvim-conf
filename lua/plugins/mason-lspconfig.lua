@@ -15,10 +15,12 @@ return {
             "clangd"
             -- 可以在这里加其它 lsp server: "basedpyright", "clangd", "jsonls"
         },
-        -- automatically enable installed servers
+        -- automatically enable installed servers, 在这里启用(自动)，或在 lspconfig.lua 里手动启用
         automatic_enable = {
             "lua_ls",
-            "clangd"
+            "clangd",
+            -- "bashls",
+            "basedpyright",
         },
     }
 }

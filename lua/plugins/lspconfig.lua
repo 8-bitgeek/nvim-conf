@@ -63,7 +63,12 @@ return {
             -- root_dir = util.root_pattern("compile_commands.json", ".git")
         })
 
-        vim.lsp.enable({ "clangd", "lua_ls", "pyright" })
+        vim.lsp.config("bashls", {
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        vim.lsp.enable({ "clangd", "lua_ls", "pyright", "bashls" })
     end,
 }
 
