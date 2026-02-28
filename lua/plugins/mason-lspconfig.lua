@@ -12,14 +12,16 @@ return {
         -- 确保以下语言服务器在启动时自动安装
         ensure_installed = {
             "lua_ls",  -- Lua 语言服务器
-            "clangd"
+            "clangd",
+            "jsonls",
+            "basedpyright"
             -- 可以在这里加其它 lsp server: "basedpyright", "clangd", "jsonls"
         },
         -- automatically enable installed servers, 在这里启用(自动)，或在 lspconfig.lua 里手动启用
         automatic_enable = {
             "lua_ls",
             "clangd",
-            -- "bashls",
+            "bashls",
             "basedpyright",
         },
     }

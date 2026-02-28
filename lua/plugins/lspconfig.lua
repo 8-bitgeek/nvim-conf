@@ -68,7 +68,8 @@ return {
             on_attach = on_attach,
         })
 
-        vim.lsp.enable({ "clangd", "lua_ls", "pyright", "bashls" })
+        -- 不用在这里 enable, 在 mason-lspconfig.lua 中 enable 即可
+        -- vim.lsp.enable({ "clangd", "lua_ls", "pyright", "bashls" })
     end,
 }
 
