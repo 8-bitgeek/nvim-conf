@@ -14,7 +14,7 @@ return {
             "lua_ls",  -- Lua 语言服务器
             "clangd",
             "jsonls",
-            "basedpyright"
+            "pyright"
             -- 可以在这里加其它 lsp server: "basedpyright", "clangd", "jsonls"
         },
         -- automatically enable installed servers, 在这里启用(自动)，或在 lspconfig.lua 里手动启用
@@ -22,7 +22,7 @@ return {
             "lua_ls",
             "clangd",
             "bashls",
-            "basedpyright",
+            "pyright",
         },
     }
 }
