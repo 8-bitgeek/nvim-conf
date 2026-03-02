@@ -52,7 +52,7 @@ return {
             capabilities = capabilities,
             on_attach = on_attach,
             filetypes = { "python", "py" },
-            root_dir = util.root_pattern(".git", "pyproject.toml", "setup.py", "requirements.txt"),
+            -- root_dir = util.root_pattern(".git", "pyproject.toml", "setup.py", "requirements.txt"),
         })
 
         vim.lsp.config("clangd", {
