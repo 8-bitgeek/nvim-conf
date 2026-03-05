@@ -25,6 +25,22 @@ return {
     config = function(_, opts)
         require("aerial").setup(opts)
 
+        -- 设置高亮颜色
+        local function set_aerial_hl()
+            vim.api.nvim_set_hl(0, "AerialLine",    { fg = "#ffffff", bg = "#3b4261", bold = true })
+            vim.api.nvim_set_hl(0, "AerialLineNC",  { fg = "#c0caf5", bg = "#2e2f3f" })
+            vim.api.nvim_set_hl(0, "AerialNormal",  { fg = "#c0caf5", bg = "#1e2030" })
+            vim.api.nvim_set_hl(0, "AerialNormalNC",{ fg = "#828bb8", bg = "#1e2030" })
+        end
+
+        set_aerial_hl()                                     -- 先设置一次
+
+        -- 主题切换后仍然保持颜色
+        vim.api.nvim_create_autocmd("ColorScheme", {
+            pattern = "*",
+            callback = set_aerial_hl,
+        })
+
         -- 右侧窗口自动打开
         vim.api.nvim_create_autocmd("FileType", {
             pattern = "*",

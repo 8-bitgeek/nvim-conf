@@ -26,7 +26,18 @@ return {
                 fg = "#ffffff",
                 bg = "#1e2030",
             })
+             -- 当前光标行
+            vim.api.nvim_set_hl(0, "NvimTreeCursorLine", {
+                fg = "#ffffff",   -- 当前行字体颜色
+                bg = "#3b4261",   -- 当前行背景色
+                bold = true,
+            })
+            -- 可选：缩进折叠线
+            vim.api.nvim_set_hl(0, "NvimTreeIndentMarker", {
+                fg = "#3b4261",
+            })
         end
+
 
         -- 立即执行一次
         set_nvim_tree_hl()
