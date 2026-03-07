@@ -23,6 +23,7 @@ return {
             "clangd",
             "bashls",
             "pyright",
+            "remark_ls"
         },
     }
 }

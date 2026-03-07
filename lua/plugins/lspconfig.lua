@@ -68,6 +68,11 @@ return {
             on_attach = on_attach,
         })
 
+        vim.lsp.config("remark_ls", {
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
         -- 不用在这里 enable, 在 mason-lspconfig.lua 中 enable 即可
         -- vim.lsp.enable({ "clangd", "lua_ls", "pyright", "bashls" })
     end,
