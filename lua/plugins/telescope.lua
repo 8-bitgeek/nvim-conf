@@ -10,6 +10,7 @@ return {
         { "<leader>fm", "<cmd>Telescope marks<cr>",      desc = "Find Marks" },             -- 查找 marks
         { "<leader>fr", "<cmd>Telescope oldfiles<cr>",   desc = "Find Recent Files" },      -- 查找 Recent Files
         { "<leader>gr", "<cmd>Telescope lsp_references<cr>",   desc = "Lsp References" },   -- 查找 References
+        { "<leader>gd", "<cmd>Telescope lsp_definitions<cr>",   desc = "Lsp Definitions" }, -- 查找 Definitions
     },
     opts = {
         defaults = {
