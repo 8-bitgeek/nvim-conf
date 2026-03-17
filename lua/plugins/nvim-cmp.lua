@@ -21,6 +21,10 @@ return {
                 { name = "buffer" },
                 { name = "path" },
             }),
+            window = {
+                completion = cmp.config.window.bordered(),
+                documentation = cmp.config.window.bordered(),
+            },
             -- 词条候选排序规则
             sorting = {
                 comparators = {
