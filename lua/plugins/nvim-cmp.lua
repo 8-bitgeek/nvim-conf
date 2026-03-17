@@ -10,19 +10,29 @@ return {
         local cmp = require("cmp")
         cmp.setup({
             mapping = cmp.mapping.preset.insert({
-            ["<Tab>"] = cmp.mapping.select_next_item(),
-            ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-            ["<CR>"] = cmp.mapping.confirm({ select = true }),
-            ["<C-Space>"] = cmp.mapping.complete(),
-            ['<C-p>'] = cmp.mapping(function()
-                vim.lsp.buf.signature_help()
-            end, {'i'}),
-        }),
-        sources = cmp.config.sources({
-            { name = "nvim_lsp" },
-            { name = "buffer" },
-            { name = "path" },
-        }),
+                ["<Tab>"] = cmp.mapping.select_next_item(),
+                ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+                ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                ["<C-Space>"] = cmp.mapping.complete(),
+                ['<C-p>'] = cmp.mapping(function() vim.lsp.buf.signature_help() end, {'i'}),
+            }),
+            sources = cmp.config.sources({
+                { name = "nvim_lsp" },
+                { name = "buffer" },
+                { name = "path" },
+            }),
+            -- 词条候选排序规则
+            sorting = {
+                comparators = {
+                    cmp.config.compare.exact,         -- 完全匹配优先
+                    cmp.config.compare.score,
+                    cmp.config.compare.recently_used,
+                    cmp.config.compare.kind,
+                    cmp.config.compare.sort_text,
+                    cmp.config.compare.length,        -- 短的优先(寄存器名很好用)
+                    cmp.config.compare.order,
+                },
+            },
         })
     end,
 }
