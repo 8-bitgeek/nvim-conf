@@ -28,12 +28,12 @@ return {
             -- 词条候选排序规则
             sorting = {
                 comparators = {
+                    cmp.config.compare.length,        -- 短的优先(寄存器名很好用)
                     cmp.config.compare.exact,         -- 完全匹配优先
-                    cmp.config.compare.score,
                     cmp.config.compare.recently_used,
+                    cmp.config.compare.score,
                     cmp.config.compare.kind,
                     cmp.config.compare.sort_text,
-                    cmp.config.compare.length,        -- 短的优先(寄存器名很好用)
                     cmp.config.compare.order,
                 },
             },
