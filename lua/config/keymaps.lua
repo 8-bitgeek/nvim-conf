@@ -22,7 +22,7 @@ keymap.set("n", "<leader>ww", ":w<CR>", { noremap = true, silent = true, desc = 
 keymap.set("n", "<leader>wa", ":wa<CR>", { noremap = true, silent = true, desc = 'Write All' })
 keymap.set("n", "<leader>wq", ":wq<CR>", { noremap = true, silent = true, desc = 'Write And Quit' })
 keymap.set("n", "<leader>hh", ":set hlsearch!<CR>", { noremap = true, silent = true, desc = 'Toggle Highlight Search' })
-keymap.set("n", "<leader>sv", ":vs<CR>", { noremap = true, silent = true, desc = 'Virtical Split' })
+keymap.set("n", "<leader>vs", ":vs<CR>", { noremap = true, silent = true, desc = 'Virtical Split' })
 keymap.set("n", "<leader>sp", ":sp<CR>", { noremap = true, silent = true, desc = 'Horizontal Split' })
 keymap.set("n", "<leader>wr", ":set wrap!<CR>", { noremap = true, silent = true, desc = 'Toggle Wrap' })
 keymap.set("n", "<leader>U", "gUaw", { noremap = true, silent = true, desc = 'To Upper Case' })
