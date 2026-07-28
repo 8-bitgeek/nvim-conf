@@ -18,7 +18,7 @@ return {
             vim.diagnostic.config({ update_in_insert = true })
             map("n", "gd", vim.lsp.buf.definition, opts)
             map("n", "gD", vim.lsp.buf.declaration, opts)
-            map("n", "gi", vim.lsp.buf.implementation, opts)
+            map("n", "<leader>gi", vim.lsp.buf.implementation, opts)
             map("n", "gr", vim.lsp.buf.references, opts)
             map("n", "K", vim.lsp.buf.hover, opts)
             map("n", "<leader>rn", vim.lsp.buf.rename, opts)
