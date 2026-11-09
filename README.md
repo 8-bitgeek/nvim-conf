@@ -3,6 +3,9 @@
 
 # Prerequisite
 
+- Neovim 0.12 or later (Aerial and the Treesitter `main` branch require it).
+- A C compiler, `tar`, `curl`, and `tree-sitter-cli` 0.26.1 or later for building parsers.
+
 ## Debian
 
 ```shell
@@ -12,5 +15,5 @@ sudo apt install ripgrep fd-find
 ## Mac
 
 ```shell
-brew isntall ripgrep ffind
+brew install neovim ripgrep fd tree-sitter-cli
 ```
