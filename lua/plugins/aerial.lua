@@ -1,7 +1,9 @@
 -- 用于生成代码大纲的插件
 return {
     "stevearc/aerial.nvim",
+    branch = "nvim-0.11", -- 兼容当前 Neovim 0.11
     lazy = true,
+    cmd = { "AerialToggle", "AerialOpen", "AerialClose", "AerialInfo" },
     keys = {
         { "<leader>c", "<cmd>AerialToggle!<CR>", desc = "Toggle Outline" },
     },
