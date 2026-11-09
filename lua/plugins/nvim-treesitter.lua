@@ -3,6 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     branch = "master",
     lazy = false,
+    main = "nvim-treesitter.configs",
     opts = {
         ensure_installed = {
             "c", "make", "lua", "bash", "json", "yaml", "markdown", "python"
