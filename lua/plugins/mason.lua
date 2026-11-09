@@ -22,7 +22,8 @@
 return {
     -- mason 是 Neovim 的 LSP/DAP/格式化工具的安装器（可视界面 + 安装逻辑）
     "williamboman/mason.nvim",
-    -- event = "VeryLazy",
+    lazy = true,
+    cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog", "MasonUpdate" },
 
     -- mason 的配置项
     opts = {

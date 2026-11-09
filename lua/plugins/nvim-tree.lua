@@ -4,6 +4,9 @@ return {
         "nvim-tree/nvim-web-devicons",
     },
     opts = {
+        view = {
+            width = 40,
+        },
         actions = {
             open_file = {
                 quit_on_open = false,            -- 打开文件时, 自动关闭导航栏(否)

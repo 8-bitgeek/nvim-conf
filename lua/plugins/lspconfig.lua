@@ -1,9 +1,8 @@
 -- 用于配置 nvim 的 LSP 客户端, 进行语言服务器的注册和参数定制
 return {
     "neovim/nvim-lspconfig",
-    event = {"BufReadPre", "BufNewFile"},                                       -- 只在打开文件时加载
+    lazy = true,                                                             -- 由 mason-lspconfig 先加载并配置
     dependencies = {
-        "williamboman/mason-lspconfig.nvim",
         "hrsh7th/cmp-nvim-lsp",
     },
 
@@ -23,7 +22,7 @@ return {
             map("n", "K", vim.lsp.buf.hover, opts)
             map("n", "<leader>rn", vim.lsp.buf.rename, opts)
             map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-            map("n", "<leader>f", function() vim.lsp.buf.format { async = true } end, opts)
+            map("n", "<leader>ff", function() vim.lsp.buf.format { async = true } end, opts)
             map('n', '<C-p>', vim.lsp.buf.signature_help, { noremap = true, silent = true })
 
             -- 禁用某些语言服务器的内建格式化
@@ -61,6 +60,11 @@ return {
             cmd = {"clangd", "--background-index", "--log=verbose"},                             -- 可选优化参数
             filetypes = {"c", "cpp", "objc", "objcpp"},
             -- root_dir = util.root_pattern("compile_commands.json", ".git")
+        })
+
+        vim.lsp.config("jsonls", {
+            capabilities = capabilities,
+            on_attach = on_attach,
         })
 
         vim.lsp.config("bashls", {
