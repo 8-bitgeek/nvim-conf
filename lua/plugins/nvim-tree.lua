@@ -5,7 +5,7 @@ return {
     },
     opts = {
         view = {
-            width = 40,
+            width = "20%",
         },
         actions = {
             open_file = {
